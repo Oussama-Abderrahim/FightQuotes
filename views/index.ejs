@@ -1,0 +1,24 @@
+<DOCTYPE html>
+
+<html lang="en">
+    <%include Header%>
+<body>        
+    <div class="quoteBox">
+        <div class="quote">
+        <cite id="quote-text"><%=locals.quoteText%></cite>
+        <br>
+        <a id = "author-link" href="#" target="_blank"><author id="author-name" class="author-name"><%=locals.authorName%></author></a>
+        </div>
+        
+        <div class="buttons">
+        <button id="tweet" class="botButton btn btn-primary">
+            <span class="fa fa-twitter"></span>
+        </button>
+    
+        <button class="newQuoteButton btn btn-primary" onclick="getQuote();">New Quote</button>
+        </div>
+    </div>
+
+    <script src="/assets/js/index.js"></script>    
+</body>
+</html>

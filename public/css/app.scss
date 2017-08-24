@@ -1,0 +1,76 @@
+$background-img-url : "http://diysolarpanelsv.com/images/blue-sky-background-with-grass-clipart-23.jpg";
+$background-color : rgba(34,34,34,0.5);
+$background-color-box: rgba(255,255,255,0.75);
+
+$text-color : rgba(34,34,34,1);
+$text-font : Arial;
+$text-font-size: 1.2em; /*em = 16px*/
+
+
+/*========================================*/
+@import "compass";
+
+body {
+  @include transition(all 0.5s);
+  margin: 0;
+  padding: 0;
+
+  background-color: $background-color;
+  background : url($background-img-url);
+  color : $text-color;
+}
+
+.quoteBox {
+  @include clearfix;
+  
+  width: 60%;
+  height: 250px;
+  margin: 100px auto;
+  padding: 10px 100px;
+  
+  background-color: $background-color-box;
+  
+  border: 1px solid black;   
+}
+
+.quote {
+    height: 150px;
+    margin: 10px auto 15px auto;
+    text-align: center;
+    vertical-align : center;
+
+  cite {
+    display: block;
+    width: 95%;
+    margin: auto;
+    font-family: $text-font, sans-serif;
+    font-size: $text-font-size;
+    line-height: 30px;
+
+    &:before, &:after{
+      content: '"';
+      font-size: 2em;
+    }
+  }
+  .author-name {
+    font-size: 1.4em;
+    &:before{content:"- ";}
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.buttons {
+  position: relative;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.botButton {
+  float: left;
+}
+
+.newQuoteButton {
+  @extend .botButton;
+  float: right;
+}

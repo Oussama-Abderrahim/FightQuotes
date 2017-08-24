@@ -1,0 +1,77 @@
+/*em = 16px*/
+/*========================================*/
+/* line 13, app.scss */
+body {
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(34, 34, 34, 0.5);
+  background: url("http://diysolarpanelsv.com/images/blue-sky-background-with-grass-clipart-23.jpg");
+  color: #222222;
+}
+
+/* line 23, app.scss */
+.quoteBox {
+  overflow: hidden;
+  *zoom: 1;
+  width: 60%;
+  height: 250px;
+  margin: 100px auto;
+  padding: 10px 100px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid black;
+}
+
+/* line 36, app.scss */
+.quote {
+  height: 150px;
+  margin: 10px auto 15px auto;
+  text-align: center;
+  vertical-align: center;
+}
+/* line 42, app.scss */
+.quote cite {
+  display: block;
+  width: 95%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 1.2em;
+  line-height: 30px;
+}
+/* line 50, app.scss */
+.quote cite:before, .quote cite:after {
+  content: '"';
+  font-size: 2em;
+}
+/* line 55, app.scss */
+.quote .author-name {
+  font-size: 1.4em;
+}
+/* line 57, app.scss */
+.quote .author-name:before {
+  content: "- ";
+}
+/* line 59, app.scss */
+.quote a {
+  text-decoration: none;
+}
+
+/* line 64, app.scss */
+.buttons {
+  position: relative;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+/* line 69, app.scss */
+.botButton, .newQuoteButton {
+  float: left;
+}
+
+/* line 73, app.scss */
+.newQuoteButton {
+  float: right;
+}

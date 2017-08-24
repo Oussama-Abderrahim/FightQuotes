@@ -1,0 +1,20 @@
+<DOCTYPE html>
+    
+<html lang="en">
+<head>
+        <%include Header%>        
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <form action="/addQuote" method="POST">
+            <label for="quoteText">Quote : </label><br>
+            <textarea name="quoteText" id="quoteText" cols="30" rows="10"></textarea>
+            <br>
+            <label for="authorName">Author : </label><br>
+            <input type="text" name="authorName" id="authorName">
+            <br>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
