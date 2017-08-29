@@ -12,6 +12,7 @@ app.use(bodyParser.json()) // parse application/json
 
 
 app.get("/", (req, res) => {    
+    console.log("loading");
     let quote = quoteDb.getRandom((quote)=> {
         res.locals.quoteText = quote.text;
         res.locals.authorName = quote.author;

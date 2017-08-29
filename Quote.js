@@ -1,8 +1,13 @@
 let mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/quote_machine", (err)=> {
+const MONGOLAB_URI = "mongodb://OussamaLightRay:L1ghtingRay@ds159953.mlab.com:59953/fight_quotes";
+// const MONGOLAB_URI = "mongodb://localhost/quote_machine";
+
+mongoose.connect(MONGOLAB_URI, {useMongoClient: true}, (err)=> {
     if(err)    
-        console.log("there was an error " + err)
+        console.log("there was an error " + err);
+    else 
+        console.log("connected");
 });
 
 let quoteSchema = new mongoose.Schema({
@@ -12,7 +17,7 @@ let quoteSchema = new mongoose.Schema({
 
 let Quote = mongoose.model("Quote", quoteSchema);
 
-
+ 
 var addQuote = function(author, text, cb) {
     let quote = new Quote({
         author,
@@ -21,6 +26,7 @@ var addQuote = function(author, text, cb) {
 
     quote.save(function(err, quote){
         if(err) {
+            console.log("error adding quote");
             throw err;
         } else {
             console.log("Quote Added ! ");
@@ -34,14 +40,17 @@ var getRandom = function(cb) {
         var random = Math.floor(Math.random() * count);
         
         let quote = Quote.findOne().skip(random).exec((err, result)=>{
-            cb(result);        
+            if(err) {
+                console.log("Error getting quote");
+                cb({author : "ERROR",
+                    text : "ERROR"})
+            } else {
+                cb(result);        
+            }
         });
     });
     
 
 }
-
-// addQuote("Oussama", "Miaou?");
-
 
 module.exports = {addQuote, getRandom};
